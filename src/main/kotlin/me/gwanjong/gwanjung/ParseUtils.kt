@@ -37,11 +37,11 @@ fun toUmmmIntInternal(a: String): Int {
     var s = a
     var n = 0
 
-    if(s.contains("식?")) {
+    if(s.contains("얀?")) {
         val answer = Scanner(System.`in`).nextInt()
-        s = s.replace("식?", ".".repeat(answer))
+        s = s.replace("얀?", ".".repeat(answer))
     }
-    if(s.contains("어")) n += memory.getSafe(s.countChar("어") - 1)
+    if(s.contains("히")) n += memory.getSafe(s.countChar("히") - 1)
     if(s.contains(".")) n += s.countChar(".")
     if(s.contains(",")) n -= s.countChar(",")
     return n
@@ -52,7 +52,7 @@ fun String.toVarIndex(isLoad: Boolean = true): Int {
         val s = this.split(" ")
 
         val b = mutableListOf<Int>()
-        s.forEach { b.add(it.countChar("어") - 1) }
+        s.forEach { b.add(it.countChar("히") - 1) }
 
         var r = 1
 
@@ -63,11 +63,11 @@ fun String.toVarIndex(isLoad: Boolean = true): Int {
         return r + if(isLoad) -1 else 0
     }
     else {
-        return this.countChar("어") + if(isLoad) -1 else 0
+        return this.countChar("히") + if(isLoad) -1 else 0
     }
 }
 
-fun String.isVariable(): Boolean = this.startsWith("어") || this.endsWith("엄")
+fun String.isVariable(): Boolean = this.startsWith("히") || this.endsWith("얀")
 
 fun convertUnicodeToString(unicodeString: String): String {
     var str: String = unicodeString.split(" ")[0]

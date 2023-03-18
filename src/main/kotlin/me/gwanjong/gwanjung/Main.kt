@@ -24,21 +24,24 @@ fun MutableList<Int>.setSafe(index: Int, value: Int) {
 
 fun parseLine(code: String){
     if(code.endsWith("")){
-        if(code.replace("식?", "") == ""){
+        if(code.replace("얀?", "") == ""){
             throw java.lang.RuntimeException("문법 오류: 대입할 변수 미지정 (${pc + 1}번 줄)")
         }
         else {
             val sc = Scanner(System.`in`)
-            memory.setSafe(code.replace("식?", "").toHiyyanInt(), sc.nextInt())
+            memory.setSafe(code.replace("얀?", "").toHiyyanInt(), sc.nextInt())
         }
     }
-    else if(code.startsWith("식")){
+    else if(code.startsWith("얀")){
         if(code.endsWith("!")){
-            val q = code.replace("식", "").replace("!", "")
+            val q = code.replace("얀", "").replace("!", "")
             print("${q.toHiyyanInt()}")
         }
-        else if(code.endsWith("ㅋ")){
-            val q = code.replace("식", "").replace("ㅋ", "")
+
+    }
+    else if(code.startsWith("히바")){
+        if(code.endsWith("얀보")){
+            val q = code.replace("히바", "").replace("얀보", "")
             if(q == ""){
                 println()
             }
@@ -50,10 +53,12 @@ fun parseLine(code: String){
         }
     }
 
-    else if(code.contains("엄")){
-        val c = code.split("엄")
 
-        memory.setSafe(c[0].countChar("어"), c[1].toHiyyanInt())
+
+    else if(code.contains("얀")){
+        val c = code.split("얀")
+
+        memory.setSafe(c[0].countChar("히"), c[1].toHiyyanInt())
     }
     else {
         return
