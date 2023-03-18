@@ -12,11 +12,11 @@ fun String.countChar(c: String): Int {
     return ret
 }
 
-fun String.toHiyyanInt(): Int {
-    return toHiyyanInt(this)
+fun String.toUmmInt(): Int {
+    return toUmmmInt(this)
 }
 
-fun toHiyyanInt(a: String): Int {
+fun toUmmmInt(a: String): Int {
     var n = 0
     if (a.contains(" ")) {
         val b = a.split(" ").map {
@@ -37,9 +37,9 @@ fun toUmmmIntInternal(a: String): Int {
     var s = a
     var n = 0
 
-    if(s.contains("얀?")) {
+    if(s.contains("바보?")) {
         val answer = Scanner(System.`in`).nextInt()
-        s = s.replace("얀?", ".".repeat(answer))
+        s = s.replace("바보?", ".".repeat(answer))
     }
     if(s.contains("히")) n += memory.getSafe(s.countChar("히") - 1)
     if(s.contains(".")) n += s.countChar(".")
