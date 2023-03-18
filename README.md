@@ -91,3 +91,27 @@
 
 - 확장자는 `.hiyyanbabo`입니다.
 - One-line 작성은 `\n`을 `~`로 치환합니다.
+
+# 사용하기
+## 준비물
+- Java17(https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+
+## 다운로드 방법
+1. Releases에 들어가 가장 최신 버전의 파일을 받아줍니다
+2. HiyyanBabo.jar이 있는 위치로 들어가 텍스트 파일을 하나 만들어줍니다
+3. 텍스트 파일에 
+   ```tsx
+    @echo off
+    java -Xmx100M -Xms100M -jar HiyyanBabo.jar
+    pause
+    ```
+   를 입력해주고 저장한 후 파일명을 start.bat로 바꿔줍니다
+
+## 파일 만들기
+1. 아무 위치에나 원하는 이름으로 텍스트 파일을 만듭니다
+2. 원하는 코드를 작성합니다
+3. 저장을 해주고 파일 확장자를 .hiyyanbabo로 변경합니다
+
+## 실행하기
+1. 원하는 .hiyyanbabo 파일의 전체 경로를 복사합니다
+2. start.bat를 실행하고 경로를 붙여넣습니다

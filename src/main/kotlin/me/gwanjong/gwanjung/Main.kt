@@ -7,16 +7,23 @@ import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
 
-    if(args.isEmpty()){
+    print("히바얀보 위치를 알려주세요\n")
+    val sc = Scanner(System.`in`)
+    val Name = sc.nextLine()
+    print("위치를 지정했습니다 : $Name\n")
+    print("===============출력=================\n")
+    val Filename = Name
+
+    if(Filename.isEmpty()){
         throw IOException("파일 이름이 없음")
     }
-    else if(!args[0].endsWith(".hiyyanbabo")){
+    else if(!Filename.endsWith(".hiyyanbabo")){
         throw IOException("${args[0]} 작동")
     }
 
 
 
-    val f = File(args[0])
+    val f = File(Filename)
     if(!f.canRead()) {
         throw IOException("파일을 읽을 수 없음")
     }

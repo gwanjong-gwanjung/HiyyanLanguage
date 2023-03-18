@@ -18,6 +18,35 @@ tasks.test {
     useJUnitPlatform()
 }
 
-kotlin {
-    jvmToolchain(17)
+val shade = configurations.create("shade")
+shade.extendsFrom(configurations.implementation.get())
+
+tasks {
+    compileKotlin {
+        kotlinOptions.jvmTarget = "17"
+    }
+    compileTestKotlin {
+        kotlinOptions.jvmTarget = "17"
+    }
+
+    jar {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+        from(
+            shade.map {
+                if (it.isDirectory)
+                    it
+                else
+                    zipTree(it)
+            }
+        )
+        this.manifest.attributes(Pair("Main-Class", "me.gwanjong.gwanjung.MainKt"))
+    }
+}
+
+
+tasks.withType<Jar>() {
+    manifest {
+        attributes["Main-Class"] = "me.gwanjong.gwanjung.MainKt"
+    }
 }
