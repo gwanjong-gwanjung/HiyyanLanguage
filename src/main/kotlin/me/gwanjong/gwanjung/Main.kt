@@ -43,7 +43,7 @@ fun main(args: Array<String>) {
             else break
         }
     }
-
+    print("\n====================================\n")
     exitProcess(0)
 }
 
