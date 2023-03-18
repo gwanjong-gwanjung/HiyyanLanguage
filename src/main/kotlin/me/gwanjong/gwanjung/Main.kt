@@ -59,6 +59,10 @@ fun MutableList<Int>.setSafe(index: Int, value: Int) {
 }
 
 fun parseLine(code: String){
+    if(code.startsWith("히바얀보")) {
+        print("히바얀보")
+    }
+
     if(code.endsWith("바보?")){
         if(code.replace("바보?", "") == ""){
             throw java.lang.RuntimeException("문법 오류: 대입할 변수 미지정 (${pc + 1}번 줄)")
@@ -90,6 +94,7 @@ fun parseLine(code: String){
 
         memory.setSafe(c[0].countChar("히"), c[1].toUmmInt())
     }
+
     else {
         return
     }
