@@ -3,7 +3,7 @@
 
 > 엄랭을 바탕으로 제작하였습니다 (https://github.com/rycont/umjunsik-lang)
 > 
-> 엄랭 긁어온거라 같은 코드가 비슷합니다
+> 엄랭 긁어온거라 같은 코드가 
 
 # 문법
 
