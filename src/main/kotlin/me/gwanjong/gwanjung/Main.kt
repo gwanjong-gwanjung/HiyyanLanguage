@@ -40,6 +40,10 @@ fun main(args: Array<String>) {
                 parseLine(codes[pc].trim())
                 pc++
             }
+            else if(codes[pc] != "윙크"){
+                parseLine(codes[pc].trim())
+                pc++
+            }
             else break
         }
     }
